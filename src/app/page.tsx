@@ -1,6 +1,8 @@
 import { Cards } from "@/components/Cards";
+import Heading from "@/components/Heading/Heading";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import { SliderLogo } from "@/components/SliderLogo";
+import Subtitle from "@/components/subtitle/Subtitle";
 import { buttonVariants } from "@/components/ui/button";
 import { Calendar, CalendarIcon, ShoppingCart } from "lucide-react";
 import Image from "next/image";
@@ -8,6 +10,13 @@ import Link from "next/link";
 export default function Home() {
   return (
     <>
+
+    
+<div className="absolute top-0 -z-10 h-full w-full bg-white">
+  <div className="absolute bottom-auto left-auto right-0 top-0 h-[500px] w-[500px] -translate-x-[30%] translate-y-[20%] rounded-full bg-[rgba(173,109,244,0.5)] opacity-50 blur-[80px]">
+    </div>
+    </div>
+
 
 <MaxWidthWrapper classname="mb-32 mt-20 sm:mt-20 flex flex-col items-center justify-center text-center sm:flex-row sm:items-start sm:text-left sm:space-x-10">
   {/* Left Column */}
@@ -17,12 +26,14 @@ export default function Home() {
         RazoMiner is now Public!
       </p>
     </div>
-    <h1 className="max-w-4xl text-5xl font-bold md:text-6xl lg:text-7xl text-left">
-      <span className="text-blue-600">Razominer</span> your leads scrapping powerhouse from web
+    <h1 className="max-w-4xl text-5xl font-bold md:text-6xl lg:text-7xl">
+      <span className="text-blue-600"><Heading/> </span>your leads scrapping powerhouse from web
     </h1>
+
     <p className="mt-5 max-w-prose text-zinc-700 sm:text-lg text-left">
-      Razominer allows you to extract leads from anywhere in the world.
+     <Subtitle/>
     </p>
+
     <Link
       href="/dashboard"
       target="_blank"

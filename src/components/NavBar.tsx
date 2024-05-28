@@ -22,6 +22,16 @@ export const NavBar = () => {
               size: "sm"
           })}>Pricing
           </Link>
+          <Link href='/about-US' className={buttonVariants({
+            variant: "ghost",
+              size: "sm"
+          })}>Our Vision
+          </Link>
+          <Link href='/FAQ' className={buttonVariants({
+            variant: "ghost",
+              size: "sm"
+          })}>FAQ
+          </Link>
           <LoginLink
                   className={buttonVariants({
                     variant: 'ghost',
@@ -33,7 +43,7 @@ export const NavBar = () => {
                   className={buttonVariants({
                     size: 'sm',
                   })}>
-                  Get started{' '}
+                  Book a Free Demo{' '}
                   <ArrowRight className='ml-1.5 h-5 w-5' />
                 </RegisterLink>
 
