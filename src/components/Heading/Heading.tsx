@@ -1,19 +1,46 @@
-import React from 'react';
-import './HeadingText.css'; // Ensure you create a CSS file for the component-specific styles
+"use client"
+import React, { useState, useEffect } from 'react';
 
-const Cifar: React.FC = () => {
+const styles = [
+  'font-bold',
+  'italic',
+  'underline',
+  'font-bold italic',
+  'font-bold underline',
+  'italic underline',
+  'font-bold italic underline',
+  // Add more styles if needed
+];
+
+const Header: React.FC = () => {
+  const [styleIndex, setStyleIndex] = useState(0);
+
+  const handleStyleChange = () => {
+    setStyleIndex((prevIndex) => (prevIndex + 1) % styles.length);
+  };
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setStyleIndex((prevIndex) => (prevIndex + 1) % styles.length);
+    }, 1000); // Change style every 2 seconds
+
+    // Clear interval on component unmount
+    return () => clearInterval(intervalId);
+  }, []);
+
   return (
-    <section className="">
-      <div className="container ">
-        <h1
-          className=" text-[var(--var-color)] float-left"
-          data-text="RazoMiner"
+    <div className="flex justify-center items-center">
+      <h1 className="max-w-4xl text-5xl font-bold md:text-6xl lg:text-7xl">
+        <span
+          className={`text-black cursor-pointer ${styles[styleIndex]}`}
+          onClick={handleStyleChange}
         >
-          RazoMiner
-        </h1>
-      </div>
-    </section>
+          Razominer
+        </span>{' '}
+        your leads scrapping powerhouse from web
+      </h1>
+    </div>
   );
 };
 
-export default Cifar;
+export default Header;

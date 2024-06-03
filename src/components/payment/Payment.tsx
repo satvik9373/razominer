@@ -3,7 +3,6 @@ import MaxWidthWrapper from '../MaxWidthWrapper';
 import { TooltipProvider } from '../ui/tooltip';
 import UpgradeButton from '../UpgradeButton';
 
-
 const pricingItems = [
   {
     plan: '6 months plan',
@@ -68,7 +67,7 @@ const pricingItems = [
 function Payment() {
   return (
     <>
-   <div className="absolute top-0 z-[-2] h-screen w-screen bg-white bg-[radial-gradient(100%_50%_at_50%_0%,rgba(0,163,255,0.13)_0,rgba(0,163,255,0)_50%,rgba(0,163,255,0)_100%)]"></div>
+      <div className="absolute top-0 z-[-2] h-screen w-screen bg-white bg-[radial-gradient(100%_50%_at_50%_0%,rgba(0,163,255,0.13)_0,rgba(0,163,255,0)_50%,rgba(0,163,255,0)_100%)]"></div>
       <MaxWidthWrapper classname="mb-8 mt-24 text-center max-w-5xl">
         <div className="mx-auto mb-10 sm:max-w-lg">
           <h1 className="text-6xl font-bold sm:text-7xl">Pricing</h1>
@@ -81,8 +80,13 @@ function Payment() {
             {pricingItems.map(({ plan, tagline, price, features }) => (
               <div
                 key={plan}
-                className={`relative rounded-2xl bg-white shadow-lg ${plan === '12 months plan' ? 'border-2 border-blue-600 shadow-blue-200' : 'border border-gray-200'}`}
+                className={`relative rounded-2xl bg-white shadow-lg ${
+                  plan === '12 months plan'
+                    ? 'border-2 border-blue-600 shadow-blue-200'
+                    : 'border border-gray-200'
+                }`}
               >
+                
                 {plan === '12 months plan' && (
                   <div className="absolute -top-5 left-0 right-0 mx-auto w-32 rounded-full bg-gradient-to-r from-blue-600 to-cyan-600 px-3 py-2 text-sm font-medium text-white">
                     Upgrade now
@@ -97,18 +101,24 @@ function Payment() {
                       <li key={index} className={negative ? 'text-gray-500' : ''}>
                         <div className="flex items-center">
                           <span>{text}</span>
+                          
                           {footnote && (
                             <span className="ml-2 text-xs text-gray-400" title={footnote}>
                               *
                             </span>
                           )}
+
+                          
                         </div>
+                        
                       </li>
                     ))}
                   </ul>
                   <div className="mt-6 flex justify-center">
+                    <p className="text-red-600 mr-2">Normal price $120</p>
+                    </div>
+                    
                     <UpgradeButton />
-                  </div>
                 </div>
               </div>
             ))}

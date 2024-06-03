@@ -25,9 +25,8 @@ export const SliderLogo = () => {
                     <img src={video.coverImage} alt="Cover" className="w-full h-full object-cover absolute inset-0" />
                     <video
                       id={`video-${index}`}
-                      controls
                       loop
-                      muted
+                      controls
                       className="w-full h-auto rounded-md"
                     >
                       <source src={video.videoSrc} type="video/mp4" />

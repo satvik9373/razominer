@@ -10,14 +10,12 @@ export const NavBar = () => {
     <nav className='sticky h-14 inset-x-0 top-0 z-30 w-full border-b border-gray-200 bg-white/75 backdrop-blur-lg transition-all'>
     <MaxWidthWrapper>
       <div className='flex h-14 items-center justify-between border-b border-zinc-200'>
-        <Link
-          href='/'
-          className='flex z-40 font-semibold'>
-          <span>RazoMiner</span>
-        </Link>
+      <Link href='/' className='flex z-40 font-semibold items-center'>
+        <img src='/logo.png' alt='RazoMiner Logo' className=' mr-2' width={150} height={150} />
+      </Link>
         <div className='hidden items-center space-x-4 sm:flex'>
           <>
-          <Link href='/pricing' className={buttonVariants({
+          <Link href='/PaymentDetails' className={buttonVariants({
             variant: "ghost",
               size: "sm"
           })}>Pricing
@@ -43,7 +41,7 @@ export const NavBar = () => {
                   className={buttonVariants({
                     size: 'sm',
                   })}>
-                  Book a Free Demo{' '}
+                  Sign Up{' '}
                   <ArrowRight className='ml-1.5 h-5 w-5' />
                 </RegisterLink>
 
