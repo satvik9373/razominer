@@ -47,6 +47,7 @@ const pricingItems = [
       {
         text: 'Personal support in Installation',
       },
+
       {
         text: 'Recorded and personal Tutorial for software',
         footnote: 'Better algorithmic responses for enhanced content quality',
@@ -108,9 +109,9 @@ function Payment() {
                             </span>
                           )}
 
-                          
-                        </div>
                         
+                        </div>
+                       
                       </li>
                     ))}
                   </ul>
